@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Waitstaff Calculator</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <header class="header">
+        <h1>WaitStaff Calculator</h1>
+    </header>
+    <div class="left">
+        <section class="meal-details">
+            <h2 class="meal-header">Enter the Meal Details</h2>
+            <form class="meal-form">
+                <label for="meal-price">Base Meal Price: $</label>
+                <input type="number" required id="meal-price" placeholder=9.99 />
+            </br>
+                <label for="tax-rate" class="tax-rate">Tax Rate: %</label>
+                <input type="number" required id="tax-rate" placeholder=8.75 />
+            </br>
+                <label for="tip-percentage">Tip Percentage: %</label>
+                <input type="number" required id="tip-percentage" placeholder=15 />
+            </br>
+                <div class="meal-buttons">
+                    <button type="submit" class="submit">Submit</button>
+                    <button type="click" class="cancel">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <!-- THIS PORTION WILL BE DYNAMICALLY GENERATED -->
+    <div class="flex">
+        <section class="right-side">
+            <div class="customer-charges">
+                <h2>Customer Charges</h2>
+                <p>Subtotal: <span>$0.00</span></p>
+                <p>Tip: <span>$0.00</span></p>
+                <p class="end">Total: <span>$0.00</span></p>
+            </div>
+            <div class="my-earnings">
+                <h2>My Earnings Info</h2>
+                <p>Tip Total: <span>$0.00</span></p>
+                <p>Meal count: <span>0</span></p>
+                <p class="end">Average Tip Per Meal <span>$0.00</span></p>
+            </div>
+        </section>
+    <section class="reset">
+        <button type="button" class="reset-button">Reset</button>
+    </section>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
