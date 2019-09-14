@@ -8,8 +8,7 @@ const store = {
 };
 
 function calculateCustomerCharges(mealPrice, tax, tip) {
-  store.subtotal = (mealPrice * tax) + (mealPrice * 1);
-  console.log(store.subtotal);
+  store.subtotal = (mealPrice * tax) + mealPrice;
   store.tip = mealPrice * tip;
   store.total = store.subtotal + store.tip;
 }
@@ -26,9 +25,10 @@ function handleCancel() {
 function handleSubmit() {
   $('.meal-form').on('submit', function(event) {
     event.preventDefault();
-    let mealPrice = $('#meal-price').val();
-    let tax = $('#tax-rate').val() / 100;
-    let tip = $('#tip-percentage').val() / 100;
+    //The user input was returning a string even though it was <input type="number">. Therefore, need to use parseInt()!!!
+    let mealPrice = parseInt($('#meal-price').val());
+    let tax = parseInt($('#tax-rate').val()) / 100;
+    let tip = parseInt($('#tip-percentage').val()) / 100;
     $('#meal-price').val('');
     $('#tax-rate').val('');
     $('#tip-percentage').val('');
